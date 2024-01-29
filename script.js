@@ -11,7 +11,7 @@ function mainScreen() {
     app.innerHTML = /*HTML*/ `
     <h1 class="overskrift"> Gjett Nummer</h1>
     <div class="inputfelt">
-        <input id="input"><button onclick="gjett()">Gjett!</button>
+        <input id="input" placeholder="Fra 0 til 10"><button onclick="gjett()">Gjett!</button>
     </div>
     `
 }
@@ -23,12 +23,12 @@ function gjett() {
     gjettaNummer = parseInt(input);
     
 
-    if (gjettaNummer < randomNumber) {
+    if (gjettaNummer < randomNumber && gjettaNummer < 11) {
         forsøk ++;
         app.innerHTML += /*HTML*/ `
         <h1 class="skrift">${gjettaNummer}↑</h1> <br/>
         `
-} else if (gjettaNummer > randomNumber) {
+} else if (gjettaNummer > randomNumber && gjettaNummer < 11) {
     forsøk ++;
     app.innerHTML += /*HTML*/ `
     <h1 class="skrift">${gjettaNummer}↓</h1> <br/>
