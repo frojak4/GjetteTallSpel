@@ -21,17 +21,20 @@ mainScreen();
 function gjett() {
     let input = document.getElementById("input").value;
     gjettaNummer = parseInt(input);
-    forsøk ++;
+    
 
     if (gjettaNummer < randomNumber) {
+        forsøk ++;
         app.innerHTML += /*HTML*/ `
         <h1 class="skrift">${gjettaNummer}↑</h1> <br/>
         `
 } else if (gjettaNummer > randomNumber) {
+    forsøk ++;
     app.innerHTML += /*HTML*/ `
     <h1 class="skrift">${gjettaNummer}↓</h1> <br/>
     `
 } else if (gjettaNummer == randomNumber) {
+    forsøk ++;
     app.innerHTML += /*HTML*/ `
     <h1 class="skrift">Gratulerer! Du klarte det på ${forsøk}. forsøk.</h1> <br/>
     <button onclick = mainScreen()>Spel igjen?</button
